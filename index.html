@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- BOOTSTRAP minified-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Caladea&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <!-- FAVICON -->
+    <!-- <link rel="icon" href="#" type="image/png" sizes="16x16"> -->
+
+    <title>Gif-Giver</title>
+</head>
+
+<body>
+
+    <div class="container shadow-lg pb-5">
+
+        <div class="row">
+            <div class="col-sm mainTitle d-flex text-shadow justify-content-center mt-5 pb-0">
+                <p>GIF-GIVER</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Generated buttons will appear here  -->
+        <div class="row d-flex justify-content-center">
+            <h4>Click on the buttons to see the animals!</h4>
+            <div id="buttons-view" class="col-sm d-flex justify-content-center mt-3 mb-3"></div>
+        </div>
+
+        <hr>
+
+        <form id="input-form">
+            <div class="row d-flex justify-content-center mt-3">
+                <h4 class="mb-0" for="user-input">What would you like to
+                    add?</h4>
+            </div>
+            <div class="row my-2 d-flex justify-content-center">
+                <input class="text-capitalize text-center shadow" type="text" placeholder="enter choice here"
+                    id="user-input">
+            </div>
+            <!-- Button triggers users input to be added -->
+            <div class="row d-flex justify-content-center mb-4">
+                <input id="userChoice" class="text-uppercase shadow" type="submit" value="Click to add">
+            </div>
+        </form>
+
+        <hr>
+
+        <!-- results will display here -->
+        <div class="row animal">
+            <div id="results-view"></div>
+        </div>
+
+
+    </div>
+
+    <!-- javascript file -->
+    <script type=" text/javascript" src="./assets/javascript/main.js">
+    </script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+</body>
+
+</html>
