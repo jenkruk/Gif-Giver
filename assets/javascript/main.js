@@ -1,4 +1,5 @@
-var animals = ['bear cubs', 'bunnies', 'hamsters', 'alpacas', 'sloths', 'otters', 'kittens', 'hedgehogs', 'pandas', 'monkeys'];
+//Animals array from which the buttons will be created
+var animals = ['puppies', 'bunnies', 'hamsters', 'alpacas', 'sloths', 'otters', 'kittens', 'hedgehogs', 'pandas', 'koalas'];
 
 $(document).ready(function () {
 
@@ -12,7 +13,7 @@ $(document).ready(function () {
             // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
             var a = $("<button>");
             // Adding a class of eachBtn to our button
-            a.addClass("row eachBtn mx-2 shadow text-uppercase");
+            a.addClass("row eachBtn mx-2 my-2 shadow text-uppercase");
             // Adding a data-attribute
             a.attr("data-name", animals[i]);
             // Providing the initial button text
@@ -27,39 +28,50 @@ $(document).ready(function () {
 
         var topic = $(this).attr("data-name");
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&apikey=fCcSrayPKQOER3lhOq7le6eYVZeR3Ls3&limit=10";
-        //var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=fCcSrayPKQOER3lhOq7le6eYVZeR3Ls3&tag=" + topic + "&limit=10";
 
         // Creating an AJAX call for the specific item button being clicked
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            console.log(response);
+            //loop through the animals array
             for (var i = 0; i < animals.length; i++) {
-                // Creating a div to hold the results
+                // Creating a div to hold the buttons created from the array
                 var resultsDiv = $("<div class='animal text-uppercase'>");
                 // Storing the rating data
-                var rating = response.data[0].rating;
+                var rating = response.data[i].rating;
+                // Retrieving the URL for the images
+                // ?????? var imgURL = ""; ??????????????????? //
+                // Variable to hold still image from Giphy Query Results
+                var stillGifs = response.data[i].images.fixed_height_still.url;
+                // Variable to hold animated image from Giphy Query Results
+                var animatedGifs = response.data[i].images.fixed_height.url;
+                // Creating image element
+                var image = $("<img>").attr("src", stillGifs);
+                //Add more image attributes to handle still and animate
+                image.attr("data-still", stillGifs);
+                image.attr("data-animate", animatedGifs);
+                image.attr("data-state", "still");
+                image.attr("id", "img" + i);
+                //Adds class to the images
+                image.addClass('gifs');
+                // Appending the image to the html element
+                resultsDiv.append(image);
+                // Putting the new results above the previous 
                 // Creating an element to have the rating displayed
-                var pOne = $("<p>").text("Rating: " + response.data[i].rating);
+                var pOne = $("<p>").text("Rating: " + rating);
                 //Adds class to first paragraph (pOne)
                 pOne.addClass('rating');
                 // Displaying the rating
                 resultsDiv.append(pOne);
-                // Retrieving the URL for the image
-                var imgURL = "";
-                // Creating an element to hold the image
-                var image = $("<img>").attr("src", response.data[i].images.fixed_height_small_still.url);
-                //Adds class to the image
-                image.addClass('pictures shadow');
-                // Appending the image
-                resultsDiv.append(image);
-                // Putting the new results above the previous 
+
                 $("#results-view").prepend(resultsDiv);
             };
         });
     }
 
-    // This function handles events when the click-to-add button is used
+    // This event listener handles events when the click-to-add button is used
     $("#userChoice").on("click", function (event) {
         event.preventDefault();
         // This line grabs the input from the textbox
@@ -78,3 +90,22 @@ $(document).ready(function () {
     // Calling the createButtons function to display the intial buttons
     createButtons();
 })
+
+// Add a listener for all elements with class of "gif"
+$(document).on("click", ".gifs", animate);
+
+
+
+function animate() {
+    // when a particular button is clicked
+    var pic = $(this).attr("id");
+    pic = "#" + pic;
+    var state = $(pic).attr("data-state");
+    if (state === "still") {
+        $(pic).attr("src", $(pic).attr("data-animate"));
+        $(pic).attr("data-state", "animate");
+    } else {
+        $(pic).attr("src", $(pic).attr("data-still"));
+        $(pic).attr("data-state", "still");
+    };
+};

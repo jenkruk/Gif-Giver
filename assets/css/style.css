@@ -4,19 +4,24 @@
     color: rgb(83, 83, 83);
 }
 
-label {
-    font-size: 1.25rem;
+h4 {
+    color: whitesmoke;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+}
+
+img {
+    border-style: inset;
+    border-color: whitesmoke;
+    border: 1px solid;
+    padding: 10px;
 }
 
 .rating {
     margin: 0 auto;
-    margin-bottom: 0;
-    margin-top: 1.2rem;
-}
-
-.animal {
-    justify-content: center;
+    margin-bottom: 1.2rem;
+    margin-top: 0;
     text-align: center;
+    border: 1px solid;
 }
 
 .mainTitle p {
@@ -32,5 +37,4 @@ label {
 
 .container {
     background: lightslategrey;
-
 }

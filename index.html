@@ -29,7 +29,7 @@
     <div class="container shadow-lg pb-5">
 
         <div class="row">
-            <div class="col-sm mainTitle d-flex text-shadow justify-content-center mt-5 pb-0">
+            <div class="col-sm mainTitle d-flex justify-content-center mt-5 pb-0">
                 <p>GIF-GIVER</p>
             </div>
         </div>
@@ -38,20 +38,23 @@
 
         <!-- Generated buttons will appear here  -->
         <div class="row d-flex justify-content-center">
-            <h4>Click on the buttons to see the animals!</h4>
-            <div id="buttons-view" class="col-sm d-flex justify-content-center mt-3 mb-3"></div>
+            <div class="col-sm text-center">
+                <h4>Click on the buttons to see the animals!</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="buttons-view" class="col-sm d-flex flex-wrap justify-content-center mt-3 mb-3"></div>
         </div>
 
         <hr>
 
         <form id="input-form">
             <div class="row d-flex justify-content-center mt-3">
-                <h4 class="mb-0" for="user-input">What would you like to
-                    add?</h4>
+                <h4 class="mb-0" for="user-input">What would you like to add?</h4>
             </div>
             <div class="row my-2 d-flex justify-content-center">
-                <input class="text-capitalize text-center shadow" type="text" placeholder="enter choice here"
-                    id="user-input">
+                <input class="text-capitalize text-center" type="text" placeholder="enter choice here" id="user-input">
             </div>
             <!-- Button triggers users input to be added -->
             <div class="row d-flex justify-content-center mb-4">
@@ -62,10 +65,7 @@
         <hr>
 
         <!-- results will display here -->
-        <div class="row animal">
-            <div id="results-view"></div>
-        </div>
-
+        <div id="results-view" class="row animal d-flex justify-content-around"></div>
 
     </div>
 
