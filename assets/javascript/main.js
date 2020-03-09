@@ -31,7 +31,7 @@ $(document).ready(function () {
     function displayQueryInfo() {
 
         var topic = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=fCcSrayPKQOER3lhOq7le6eYVZeR3Ls3&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=fCcSrayPKQOER3lhOq7le6eYVZeR3Ls3&limit=10&rating=G";
         //var queryURL = "https://api.giphy.com/v1/gifs/random?&api_key=fCcSrayPKQOER3lhOq7le6eYVZeR3Ls3&tag=" + topic + "&limit=10";
 
         // Creating an AJAX call for the specific item button being clicked
