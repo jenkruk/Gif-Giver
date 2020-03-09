@@ -1,8 +1,12 @@
+//
+
+
 //Animals array from which the buttons will be created
 var animals = ['puppies', 'bunnies', 'hamsters', 'alpacas', 'sloths', 'otters', 'kittens', 'hedgehogs', 'pandas', 'koalas'];
 
-$(document).ready(function () {
 
+$(document).ready(function () {
+    //Creates buttons from the above array
     function createButtons() {
         // Deleting the previous buttons prior to adding new buttons
         // (this is necessary otherwise you will have repeat buttons)
@@ -23,11 +27,12 @@ $(document).ready(function () {
         }
     }
 
-    // displayQueryInfo function re-creates the HTML to display the api content
+    // displayQueryInfo function re-creates the HTML to display the api query content
     function displayQueryInfo() {
 
         var topic = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&apikey=fCcSrayPKQOER3lhOq7le6eYVZeR3Ls3&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=fCcSrayPKQOER3lhOq7le6eYVZeR3Ls3&limit=10";
+        //var queryURL = "https://api.giphy.com/v1/gifs/random?&api_key=fCcSrayPKQOER3lhOq7le6eYVZeR3Ls3&tag=" + topic + "&limit=10";
 
         // Creating an AJAX call for the specific item button being clicked
         $.ajax({
@@ -90,6 +95,8 @@ $(document).ready(function () {
     // Calling the createButtons function to display the intial buttons
     createButtons();
 })
+
+$(".instrx").hide();
 
 // Add a listener for all elements with class of "gif"
 $(document).on("click", ".gifs", animate);
