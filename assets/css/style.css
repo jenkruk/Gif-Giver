@@ -37,18 +37,25 @@ body {
     margin-top: 4.75rem;
 }
 
-a {
-    cursor: pointer;
-}
-
-.giphy img {
+a img {
     height: 40px;
     width: 80px;
+    cursor: pointer;
     border: none;
     box-shadow: none;
     position: absolute;
     margin-left: -185px;
     margin-top: -3px;
+}
+
+a img:hover {
+    height: 41px;
+    width: 82px;
+}
+
+a img:active {
+    height: 40px;
+    width: 80px;
 }
 
 hr {
@@ -93,7 +100,7 @@ img {
         margin-top: 60px;
     }
 
-    .giphy img {
+    a img {
         height: 35px;
         width: 70px;
         margin-left: -148px;
@@ -113,7 +120,7 @@ img {
         margin-top: 50px;
     }
 
-    .giphy img {
+    a img {
         height: 30px;
         width: 60px;
         margin-left: -105px;
