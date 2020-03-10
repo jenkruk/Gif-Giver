@@ -25,16 +25,18 @@
 </head>
 
 <body>
-
+    <!-- Section 1: Game Title and bow image -->
     <div class="container chalkboard shadow-lg pb-5">
         <div class="row d-flex justify-content-center">
             <img class="bow mt-3" src="./assets/images/bow.png" alt="bow">
             <div class="mainTitle">GIF-GIVER</div>
+            <a class="giphy d-flex align-items-end" href="https://giphy.com" target="_blank"><img
+                    src="./assets/images/giphy.png" alt="Powered by Giphy"></a>
         </div>
 
         <hr>
 
-        <!-- Generated buttons will appear here  -->
+        <!-- Section 2: Buttons from the animal array will appear here -->
         <div class="row d-flex justify-content-center">
             <div class="col-sm text-center">
                 <h4>Click on the buttons to see the animals!</h4>
@@ -47,6 +49,7 @@
 
         <hr>
 
+        <!-- Section 3: Form for user to add a topic of their choice  -->
         <form id="input-form">
             <div class="row d-flex justify-content-center mt-3">
                 <h4 class="mb-0" for="user-input">What would you like to add?</h4>
@@ -62,11 +65,12 @@
 
         <hr>
 
-        <h4 class="row d-flex justify-content-center mb-3" id="instrx">Click on the images to animate!</h4>
-
-        <!-- results will display here -->
-        <div id="results-view" class="row animal d-flex justify-content-around">
+        <!-- Section 4: This is where the gifs will be diplayed  -->
+        <div class="row d-flex justify-content-center mb-3">
+            <h4 id="instrx">Click on the images to animate!</h4>
         </div>
+
+        <div id="results-view" class="row animal d-flex justify-content-around"></div>
 
     </div>
 
